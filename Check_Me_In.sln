@@ -3,7 +3,12 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29728.190
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Check Me In", "Check Me In\Check Me In.csproj", "{120C86A0-B959-4B65-972A-01CB33D7D481}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Check_Me_In", "Check Me In\Check_Me_In.csproj", "{120C86A0-B959-4B65-972A-01CB33D7D481}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{185D6567-A2FB-4A5A-82B3-FD81E55A81D7}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\..\Downloads\checkMeIn.sql = ..\..\..\Downloads\checkMeIn.sql
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
