@@ -35,14 +35,19 @@
             this.STATUS = new System.Windows.Forms.ToolStripMenuItem();
             this.welcome_lab = new System.Windows.Forms.Label();
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.loginstatuslabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.manageUsersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.checkRoomStatusToolStripMenuItem,
-            this.VIEWROOMS});
+            this.VIEWROOMS,
+            this.manageUsersToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 28);
@@ -79,7 +84,7 @@
             // 
             this.STATUS.Font = new System.Drawing.Font("Impact", 12F);
             this.STATUS.Name = "STATUS";
-            this.STATUS.Size = new System.Drawing.Size(122, 24);
+            this.STATUS.Size = new System.Drawing.Size(180, 24);
             this.STATUS.Text = "STATUS";
             this.STATUS.Click += new System.EventHandler(this.STATUS_Click);
             // 
@@ -105,6 +110,28 @@
             this.monthCalendar1.Name = "monthCalendar1";
             this.monthCalendar1.TabIndex = 3;
             // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.loginstatuslabel});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 428);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(800, 22);
+            this.statusStrip1.TabIndex = 5;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // loginstatuslabel
+            // 
+            this.loginstatuslabel.Name = "loginstatuslabel";
+            this.loginstatuslabel.Size = new System.Drawing.Size(0, 17);
+            // 
+            // manageUsersToolStripMenuItem
+            // 
+            this.manageUsersToolStripMenuItem.Name = "manageUsersToolStripMenuItem";
+            this.manageUsersToolStripMenuItem.Size = new System.Drawing.Size(93, 24);
+            this.manageUsersToolStripMenuItem.Text = "Manage Users";
+            this.manageUsersToolStripMenuItem.Click += new System.EventHandler(this.manageUsersToolStripMenuItem_Click);
+            // 
             // main_window
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -112,6 +139,7 @@
             this.BackgroundImage = global::Check_Me_In.Properties.Resources.bell;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.monthCalendar1);
             this.Controls.Add(this.welcome_lab);
             this.Controls.Add(this.menuStrip1);
@@ -119,8 +147,11 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "main_window";
             this.Text = "Main Window";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.main_window_FormClosing);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -135,6 +166,9 @@
         private System.Windows.Forms.ToolStripMenuItem VIEWROOMS;
         private System.Windows.Forms.ToolStripMenuItem STATUS;
         private System.Windows.Forms.MonthCalendar monthCalendar1;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel loginstatuslabel;
+        private System.Windows.Forms.ToolStripMenuItem manageUsersToolStripMenuItem;
     }
 }
 

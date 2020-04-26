@@ -16,7 +16,7 @@ namespace Check_Me_In
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new main_window());
+            Application.Run(new login());
         }
     }
 }

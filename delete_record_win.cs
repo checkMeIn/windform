@@ -12,9 +12,18 @@ namespace Check_Me_In
 {
     public partial class delete_record_win : Form
     {
+        private readonly checkMeInDBEntities checkMeInDB;
         public delete_record_win()
         {
             InitializeComponent();
+            checkMeInDB = new checkMeInDBEntities();
+        }
+
+        private void delete_record_win_Load(object sender, EventArgs e)
+        {
+            var delete = checkMeInDB.Rooms.ToList();
+            Select_room_CB.DisplayMember = "roomNum";
+            Select_room_CB.DataSource = delete;
         }
     }
 }

@@ -41,10 +41,17 @@
             this.FirstNameLB = new System.Windows.Forms.Label();
             this.LastNameLB = new System.Windows.Forms.Label();
             this.Gender = new System.Windows.Forms.Label();
-            this.MalecheckBox = new System.Windows.Forms.CheckBox();
-            this.femalecheckBox = new System.Windows.Forms.CheckBox();
             this.Rate = new System.Windows.Forms.Label();
             this.Ratebox = new System.Windows.Forms.TextBox();
+            this.countryTB = new System.Windows.Forms.TextBox();
+            this.country_Lab = new System.Windows.Forms.Label();
+            this.ContactNum_lab = new System.Windows.Forms.Label();
+            this.contact_tb = new System.Windows.Forms.TextBox();
+            this.HomeAddre_lab = new System.Windows.Forms.Label();
+            this.address_tb = new System.Windows.Forms.TextBox();
+            this.gendertb = new System.Windows.Forms.TextBox();
+            this.stats_sel = new System.Windows.Forms.Label();
+            this.status_cb = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // checkIn_Page
@@ -71,6 +78,8 @@
             this.Select_room_CB.Name = "Select_room_CB";
             this.Select_room_CB.Size = new System.Drawing.Size(121, 21);
             this.Select_room_CB.TabIndex = 5;
+            this.Select_room_CB.SelectedIndexChanged += new System.EventHandler(this.Select_room_CB_SelectedIndexChanged);
+            this.Select_room_CB.SelectionChangeCommitted += new System.EventHandler(this.Select_room_CB_SelectionChangeCommitted);
             // 
             // Select_a_room
             // 
@@ -91,6 +100,7 @@
             this.bookin.TabIndex = 7;
             this.bookin.Text = "Book In Guest";
             this.bookin.UseVisualStyleBackColor = true;
+            this.bookin.Click += new System.EventHandler(this.bookin_Click);
             // 
             // dateIn
             // 
@@ -132,7 +142,7 @@
             // 
             // F_Name
             // 
-            this.F_Name.Location = new System.Drawing.Point(338, 161);
+            this.F_Name.Location = new System.Drawing.Point(338, 114);
             this.F_Name.Name = "F_Name";
             this.F_Name.Size = new System.Drawing.Size(159, 20);
             this.F_Name.TabIndex = 12;
@@ -140,7 +150,7 @@
             // 
             // L_Name
             // 
-            this.L_Name.Location = new System.Drawing.Point(532, 161);
+            this.L_Name.Location = new System.Drawing.Point(532, 114);
             this.L_Name.Name = "L_Name";
             this.L_Name.Size = new System.Drawing.Size(159, 20);
             this.L_Name.TabIndex = 13;
@@ -149,7 +159,7 @@
             // 
             this.FirstNameLB.AutoSize = true;
             this.FirstNameLB.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FirstNameLB.Location = new System.Drawing.Point(335, 136);
+            this.FirstNameLB.Location = new System.Drawing.Point(335, 89);
             this.FirstNameLB.Name = "FirstNameLB";
             this.FirstNameLB.Size = new System.Drawing.Size(91, 18);
             this.FirstNameLB.TabIndex = 14;
@@ -159,7 +169,7 @@
             // 
             this.LastNameLB.AutoSize = true;
             this.LastNameLB.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.LastNameLB.Location = new System.Drawing.Point(534, 136);
+            this.LastNameLB.Location = new System.Drawing.Point(534, 89);
             this.LastNameLB.Name = "LastNameLB";
             this.LastNameLB.Size = new System.Drawing.Size(89, 18);
             this.LastNameLB.TabIndex = 15;
@@ -169,31 +179,11 @@
             // 
             this.Gender.AutoSize = true;
             this.Gender.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.Gender.Location = new System.Drawing.Point(335, 219);
+            this.Gender.Location = new System.Drawing.Point(335, 154);
             this.Gender.Name = "Gender";
             this.Gender.Size = new System.Drawing.Size(63, 18);
             this.Gender.TabIndex = 16;
             this.Gender.Text = "Gender";
-            // 
-            // MalecheckBox
-            // 
-            this.MalecheckBox.AutoSize = true;
-            this.MalecheckBox.Location = new System.Drawing.Point(404, 220);
-            this.MalecheckBox.Name = "MalecheckBox";
-            this.MalecheckBox.Size = new System.Drawing.Size(49, 17);
-            this.MalecheckBox.TabIndex = 17;
-            this.MalecheckBox.Text = "Male";
-            this.MalecheckBox.UseVisualStyleBackColor = true;
-            // 
-            // femalecheckBox
-            // 
-            this.femalecheckBox.AutoSize = true;
-            this.femalecheckBox.Location = new System.Drawing.Point(459, 222);
-            this.femalecheckBox.Name = "femalecheckBox";
-            this.femalecheckBox.Size = new System.Drawing.Size(60, 17);
-            this.femalecheckBox.TabIndex = 18;
-            this.femalecheckBox.Text = "Female";
-            this.femalecheckBox.UseVisualStyleBackColor = true;
             // 
             // Rate
             // 
@@ -212,15 +202,99 @@
             this.Ratebox.Size = new System.Drawing.Size(159, 20);
             this.Ratebox.TabIndex = 20;
             // 
+            // countryTB
+            // 
+            this.countryTB.Location = new System.Drawing.Point(532, 219);
+            this.countryTB.Name = "countryTB";
+            this.countryTB.Size = new System.Drawing.Size(172, 20);
+            this.countryTB.TabIndex = 21;
+            // 
+            // country_Lab
+            // 
+            this.country_Lab.AutoSize = true;
+            this.country_Lab.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.country_Lab.Location = new System.Drawing.Point(534, 198);
+            this.country_Lab.Name = "country_Lab";
+            this.country_Lab.Size = new System.Drawing.Size(137, 18);
+            this.country_Lab.TabIndex = 22;
+            this.country_Lab.Text = "Country of Origin";
+            // 
+            // ContactNum_lab
+            // 
+            this.ContactNum_lab.AutoSize = true;
+            this.ContactNum_lab.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.ContactNum_lab.Location = new System.Drawing.Point(327, 198);
+            this.ContactNum_lab.Name = "ContactNum_lab";
+            this.ContactNum_lab.Size = new System.Drawing.Size(131, 18);
+            this.ContactNum_lab.TabIndex = 23;
+            this.ContactNum_lab.Text = "Contact Number";
+            // 
+            // contact_tb
+            // 
+            this.contact_tb.Location = new System.Drawing.Point(325, 219);
+            this.contact_tb.Name = "contact_tb";
+            this.contact_tb.Size = new System.Drawing.Size(172, 20);
+            this.contact_tb.TabIndex = 24;
+            // 
+            // HomeAddre_lab
+            // 
+            this.HomeAddre_lab.AutoSize = true;
+            this.HomeAddre_lab.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.HomeAddre_lab.Location = new System.Drawing.Point(327, 271);
+            this.HomeAddre_lab.Name = "HomeAddre_lab";
+            this.HomeAddre_lab.Size = new System.Drawing.Size(119, 18);
+            this.HomeAddre_lab.TabIndex = 25;
+            this.HomeAddre_lab.Text = "Home Address";
+            this.HomeAddre_lab.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // address_tb
+            // 
+            this.address_tb.Location = new System.Drawing.Point(472, 269);
+            this.address_tb.Name = "address_tb";
+            this.address_tb.Size = new System.Drawing.Size(316, 20);
+            this.address_tb.TabIndex = 26;
+            // 
+            // gendertb
+            // 
+            this.gendertb.Location = new System.Drawing.Point(404, 155);
+            this.gendertb.Name = "gendertb";
+            this.gendertb.Size = new System.Drawing.Size(100, 20);
+            this.gendertb.TabIndex = 27;
+            // 
+            // stats_sel
+            // 
+            this.stats_sel.AutoSize = true;
+            this.stats_sel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.stats_sel.Location = new System.Drawing.Point(343, 325);
+            this.stats_sel.Name = "stats_sel";
+            this.stats_sel.Size = new System.Drawing.Size(199, 20);
+            this.stats_sel.TabIndex = 29;
+            this.stats_sel.Text = "Select Payment Method";
+            // 
+            // status_cb
+            // 
+            this.status_cb.FormattingEnabled = true;
+            this.status_cb.Location = new System.Drawing.Point(561, 323);
+            this.status_cb.Name = "status_cb";
+            this.status_cb.Size = new System.Drawing.Size(121, 21);
+            this.status_cb.TabIndex = 28;
+            // 
             // check_in_form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(798, 450);
+            this.Controls.Add(this.stats_sel);
+            this.Controls.Add(this.status_cb);
+            this.Controls.Add(this.gendertb);
+            this.Controls.Add(this.address_tb);
+            this.Controls.Add(this.HomeAddre_lab);
+            this.Controls.Add(this.contact_tb);
+            this.Controls.Add(this.ContactNum_lab);
+            this.Controls.Add(this.country_Lab);
+            this.Controls.Add(this.countryTB);
             this.Controls.Add(this.Ratebox);
             this.Controls.Add(this.Rate);
-            this.Controls.Add(this.femalecheckBox);
-            this.Controls.Add(this.MalecheckBox);
             this.Controls.Add(this.Gender);
             this.Controls.Add(this.LastNameLB);
             this.Controls.Add(this.FirstNameLB);
@@ -236,6 +310,7 @@
             this.Controls.Add(this.checkIn_Page);
             this.Name = "check_in_form";
             this.Text = "check_in_form";
+            this.Load += new System.EventHandler(this.check_in_form_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -256,9 +331,16 @@
         private System.Windows.Forms.Label FirstNameLB;
         private System.Windows.Forms.Label LastNameLB;
         private System.Windows.Forms.Label Gender;
-        private System.Windows.Forms.CheckBox MalecheckBox;
-        private System.Windows.Forms.CheckBox femalecheckBox;
         private System.Windows.Forms.Label Rate;
         private System.Windows.Forms.TextBox Ratebox;
+        private System.Windows.Forms.TextBox countryTB;
+        private System.Windows.Forms.Label country_Lab;
+        private System.Windows.Forms.Label ContactNum_lab;
+        private System.Windows.Forms.TextBox contact_tb;
+        private System.Windows.Forms.Label HomeAddre_lab;
+        private System.Windows.Forms.TextBox address_tb;
+        private System.Windows.Forms.TextBox gendertb;
+        private System.Windows.Forms.Label stats_sel;
+        private System.Windows.Forms.ComboBox status_cb;
     }
 }

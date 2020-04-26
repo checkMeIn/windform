@@ -47,13 +47,6 @@
             // Select_room_CB
             // 
             this.Select_room_CB.FormattingEnabled = true;
-            this.Select_room_CB.Items.AddRange(new object[] {
-            "1 room",
-            "2 room",
-            "3 room",
-            "4 room",
-            "5 room",
-            "6 room"});
             this.Select_room_CB.Location = new System.Drawing.Point(28, 184);
             this.Select_room_CB.Name = "Select_room_CB";
             this.Select_room_CB.Size = new System.Drawing.Size(121, 21);
@@ -89,6 +82,7 @@
             this.Controls.Add(this.Delete_Page);
             this.Name = "delete_record_win";
             this.Text = "delete_record_win";
+            this.Load += new System.EventHandler(this.delete_record_win_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

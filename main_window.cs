@@ -12,10 +12,19 @@ namespace Check_Me_In
 {
     public partial class main_window : Form
     {
+        private login _login;
         public main_window()
         {
             InitializeComponent();
         }
+        public main_window(login login)
+        {
+
+            InitializeComponent();
+            _login = login;
+
+        }
+
 
         private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
@@ -25,7 +34,7 @@ namespace Check_Me_In
         private void bookAroom_Click(object sender, EventArgs e)
         {
             var check_in_forms = new check_in_form();
-            check_in_forms.Show();
+            check_in_forms.ShowDialog();
         }
 
         private void vIEWROOMSToolStripMenuItem_Click(object sender, EventArgs e)
@@ -41,8 +50,19 @@ namespace Check_Me_In
         private void STATUS_Click(object sender, EventArgs e)
         {
             var status = new room_status ();
-            status.Show();
+            status.ShowDialog();
 
+
+        }
+
+        private void main_window_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            _login.Close();
+        }
+
+        private void manageUsersToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
 
         }
     }
